@@ -1,5 +1,5 @@
 Bun.serve({
-    port: 3001,
+    port: 80,
     fetch(request) {
         return new Response("Hello from Bun!");
     },
