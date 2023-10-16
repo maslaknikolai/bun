@@ -11,7 +11,9 @@ const connection = await createConnection({
 Bun.serve({
     port: process.env.PORT || 3001,
     async fetch(request) {
-        const [rows] = await connection.execute("SELECT 1+2 AS count");
-        return new Response("Hello from Bun!" + JSON.stringify(rows));
+        const [rows] = await connection.execute("SELECT * from users");
+        console.log(rows);
+
+        return new Response(JSON.stringify(rows));
     },
 });
